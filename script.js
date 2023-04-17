@@ -7,7 +7,7 @@ function saludoInicial(nombreCompleto) {
   } 
 }
 
-let nombrePersona = prompt("INGRESE USUARIO");
+let nombrePersona = prompt("INGRESE SU USUARIO PARA COMENZAR");
 nombrePersona = nombrePersona.trim()
 saludoInicial(nombrePersona);
 
@@ -98,16 +98,23 @@ let products = [
   },
 ];
 
-const buscador = document.getElementById('buscador');
-buscador.addEventListener('input', () => {
-  const filtro = buscador.value.toLowerCase();
-  const productosFiltrados = products.filter(producto =>
-    producto.modelo.toLowerCase().includes(filtro) || producto.categoria.toLowerCase().includes(filtro));
-  // Aquí podrías mostrar los resultados en pantalla
+// Obtener referencias a los elementos del DOM
+const searchInput = document.getElementById('search-input');
+const searchButton = document.getElementById('search-button');
+const categorySelect = document.getElementById('category-select');
+const filterButton = document.getElementById('filter-button');
+
+// Agregar eventos de escucha de eventos a los elementos
+searchButton.addEventListener('click', () => {
+  // Realizar la búsqueda
+});
+
+filterButton.addEventListener('click', () => {
+  // Realizar el filtrado
 });
 
 // Botón Filtrar
-const botonFiltrar = document.getElementById('boton-filtrar');
+const botonFiltrar = document.getElementById('filter-buton');
 botonFiltrar.addEventListener('click', () => {
   const categoria = prompt('Ingrese la categoría a filtrar:');
   const precioMin = prompt('Ingrese el precio mínimo:');
@@ -115,7 +122,7 @@ botonFiltrar.addEventListener('click', () => {
   const productosFiltrados = products.filter(producto =>
     producto.categoria.toLowerCase() === categoria.toLowerCase() &&
     producto.precio >= precioMin && producto.precio <= precioMax);
-  // Aquí podrías mostrar los resultados en pantalla
+  // Aquí puedos mostrar los resultados en pantalla
 });
 
 let productos = products.map(product => {
