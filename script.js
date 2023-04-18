@@ -122,6 +122,7 @@ function mostrarProductos(){
   })
 }
 
+
 mostrarProductos()
 
 function agregarALCarrito(e){
@@ -130,4 +131,6 @@ function agregarALCarrito(e){
   console.log(e.target.id);
 
   const id = parseInt(e.target.id);
+
+  const prod = products.find(p => p.id === id);
 }
