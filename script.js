@@ -1,5 +1,6 @@
 
 const products = [
+  //me falta enlazar las imagenes de las cards
   {
     id: 1,
     modelo: "diana",
@@ -88,20 +89,12 @@ const products = [
 ];
 
 
-// Agregar eventos de escucha de eventos a los elementos
-searchButton.addEventListener('click', () => {
-  // Realizar la búsqueda
-});
-
-filterButton.addEventListener('click', () => {
-  // Realizar el filtrado
-});
-
-
-function mostrarProductos(){
+function mostrarProductos(productos){
   const containerProds = document.getElementById('container-prods')
  
-  products.forEach( p => {
+  containerProds.innerHTML ="";
+
+  productos.forEach( p => {
 
     const card = document.createElement('div');
      
@@ -123,7 +116,7 @@ function mostrarProductos(){
 }
 
 
-mostrarProductos()
+mostrarProductos(products)
 
 function agregarALCarrito(e){
   e.preventDefault();
@@ -133,4 +126,10 @@ function agregarALCarrito(e){
   const id = parseInt(e.target.id);
 
   const prod = products.find(p => p.id === id);
+}
+
+
+function filtrar(){
+
+  mostrarProductos(arrayFiltrado);
 }
