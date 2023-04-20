@@ -7,7 +7,7 @@ const products = [
     categoria: "arrimos",
     precio: 27990,
     stock: 5,
-    img:,
+    img: "./img/arrimoconcajon.jpg",
   },
   {
     id: 2,
@@ -133,3 +133,4 @@ function filtrar(){
 
   mostrarProductos(arrayFiltrado);
 }
+
