@@ -1,6 +1,5 @@
 
 const products = [
-  //me falta enlazar las imagenes de las cards
   {
     id: 1,
     modelo: "Modelo diana",
@@ -99,6 +98,8 @@ const products = [
   },
 ];
 
+const carrito = JSON.parse(localStorage.getItem("carrito")) || []; 
+
 
 function mostrarProductos(productos){
   const containerProds = document.getElementById('container-prods')
@@ -110,8 +111,8 @@ function mostrarProductos(productos){
     const card = document.createElement('div');
      
      card.innerHTML =`<h3>${p.modelo}</h3>
-                    <img src="./${p.img}" alt="">
-                    <button id="${p.id}" >comprar</button>
+                    <img class="misEstilos" src="./${p.img}" alt="">
+                    <button id="${p.id}" >Agregar al Carrito</button>
 
                    
                     `
@@ -137,6 +138,12 @@ function agregarALCarrito(e){
   const id = parseInt(e.target.id);
 
   const prod = products.find(p => p.id === id);
+
+  carrito.push(prod);
+
+  localStorage.setItem("carrito", JSON.stringify (carrito));
+ 
+  console.log(carrito) 
 }
 
 

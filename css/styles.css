@@ -15,11 +15,10 @@ a {
   background-image:url(../img/nav-madera2.jpg);
 }
 
-.tarjetas h3 {
-  text-align: center;
-  text-decoration: underline;
+#container-prods {
   padding: 2rem;
-  margin: 2rem;
+  margin: 1rem;
+  border-style: dotted;
 }
 
 .seleccionados {
@@ -29,11 +28,8 @@ a {
   font-size: larger;
 
 }
-.tarjetas-arrimo {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 3rem;
+.misEstilos {
+  width: 20rem;
   
 }
 
