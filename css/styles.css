@@ -15,12 +15,6 @@ a {
   background-image:url(../img/nav-madera2.jpg);
 }
 
-#container-prods {
-  padding: 2rem;
-  margin: 1rem;
-  border-style: dotted;
-}
-
 .seleccionados {
   text-align: center;
   padding: 1rem;
@@ -28,31 +22,26 @@ a {
   font-size: larger;
 
 }
+
+#container-prods {
+  padding: 2rem;
+  margin: 2rem;
+  border-style: groove;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+div {
+  margin: 1rem;
+  padding: 2rem;
+  background-color: rgb(244, 223, 196);
+  border-style: outset;
+}
+
 .misEstilos {
-  width: 20rem;
-  
-}
-
-.tarjetas-mesas {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 3rem;
-  
-}
-
-.tarjetas-modulares {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 3rem;
-  
-}
-
-.tarjetas-extras {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 3rem;
-  
+  width: 17rem;
+  height: 15rem;
+  margin: 1rem;
+  border-radius: 2%;
+  border-style: hidden;
 }

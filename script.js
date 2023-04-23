@@ -112,11 +112,12 @@ function mostrarProductos(productos){
      
      card.innerHTML =`<h3>${p.modelo}</h3>
                     <img class="misEstilos" src="./${p.img}" alt="">
+                    <p>El precio es de $${p.precio}</p>
                     <button id="${p.id}" >Agregar al Carrito</button>
 
-                   
-                    `
-                    
+                    `  
+
+
 
     containerProds.appendChild(card);  
 
@@ -152,3 +153,6 @@ function filtrar(){
   mostrarProductos(arrayFiltrado);
 }
 
+//este boton es para que filtre una busqueda del producto ingresado
+let boton = document.getElementById=("search-button")
+boton.addEventListener("click", buscar)
