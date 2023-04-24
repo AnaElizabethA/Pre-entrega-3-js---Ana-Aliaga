@@ -111,13 +111,12 @@ function mostrarProductos(productos){
     const card = document.createElement('div');
      
      card.innerHTML =`<h3>${p.modelo}</h3>
+                    <p>${p.categoria}</p>
                     <img class="misEstilos" src="./${p.img}" alt="">
                     <p>El precio es de $${p.precio}</p>
                     <button id="${p.id}" >Agregar al Carrito</button>
 
                     `  
-
-
 
     containerProds.appendChild(card);  
 
@@ -153,6 +152,17 @@ function filtrar(){
   mostrarProductos(arrayFiltrado);
 }
 
-//este boton es para que filtre una busqueda del producto ingresado
+
+//este es para que aparesca cualquier producto que ingrese en el buscador
+let buscador = document.getElementById("search-input")
+buscador.addEventListener("input", buscador)
+
+function buscador () {
+  let arrayFiltrado = prod.filter(productos => p.nombre.includes(buscador.value))
+  mostrarProductos(arrayFiltrado)
+}
+
+
+//este boton es para que filtre una busqueda por categoria
 let boton = document.getElementById=("search-button")
 boton.addEventListener("click", buscar)
