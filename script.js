@@ -157,7 +157,7 @@ function filtrar(){
 let buscador = document.getElementById("search-input")
 buscador.addEventListener("input", buscador)
 
-function buscador () {
+function buscar() {
   let arrayFiltrado = prod.filter(productos => p.nombre.includes(buscador.value))
   mostrarProductos(arrayFiltrado)
 }
