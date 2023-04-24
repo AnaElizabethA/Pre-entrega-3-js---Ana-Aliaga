@@ -146,12 +146,10 @@ function agregarALCarrito(e){
   console.log(carrito) 
 }
 
-
 function filtrar(){
 
   mostrarProductos(arrayFiltrado);
 }
-
 
 //este es para que aparesca cualquier producto que ingrese en el buscador
 let buscador = document.getElementById("search-input")
@@ -162,7 +160,6 @@ function buscar() {
   mostrarProductos(arrayFiltrado)
 }
 
-
 //este boton es para que filtre una busqueda por categoria
-let boton = document.getElementById=("search-button")
-boton.addEventListener("click", buscar)
+let boton = document.getElementById("search-button")
+boton.addEventListener("click", buscador)
