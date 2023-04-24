@@ -153,13 +153,14 @@ function filtrar(){
 
 //este es para que aparesca cualquier producto que ingrese en el buscador
 let buscador = document.getElementById("search-input")
-buscador.addEventListener("input", buscador)
+buscador.addEventListener("input", buscar)
 
 function buscar() {
-  let arrayFiltrado = prod.filter(productos => p.nombre.includes(buscador.value))
+  let arrayFiltrado = products.filter(products => p.nombre.includes(buscador.value))
   mostrarProductos(arrayFiltrado)
 }
 
 //este boton es para que filtre una busqueda por categoria
 let boton = document.getElementById("search-button")
-boton.addEventListener("click", buscador)
+boton.addEventListener("click", buscar)
+
