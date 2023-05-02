@@ -126,17 +126,6 @@ function mostrarProductos(productos){
 
     const btnComprar = document.getElementById(`${p.id}`);
     btnComprar.addEventListener('click', agregarALCarrito);
-
-    function btnComprar(){
-      Swal.fire({
-      position: 'top-end',
-      icon: 'success',
-      title: 'Su producto se agrego al carrito',
-      showConfirmButton: false,
-      timer: 1500
-    })
-    }
-    
                  
   })
 }
@@ -158,6 +147,14 @@ function agregarALCarrito(e){
   localStorage.setItem("carrito", JSON.stringify (carrito));
  
   console.log(carrito) 
+
+  Swal.fire({
+    position: 'top-end',
+    icon: 'success',
+    title: 'Your work has been saved',
+    showConfirmButton: false,
+    timer: 1500
+  })
 }
 
 
