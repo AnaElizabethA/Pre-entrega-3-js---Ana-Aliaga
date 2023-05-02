@@ -1,3 +1,7 @@
+//mensaje de bienvenida
+function bienvenido(){
+Swal.fire("Bienvenido a Arrimos Morales");
+}
 
 const products = [
   {
@@ -145,9 +149,23 @@ function agregarALCarrito(e){
  
   console.log(carrito) 
 }
+// agregarle una alerta de agregado al carrito al button
+  let agregar = document.getElementById("${p.id}");
+  agregar.addEventListener('click',agregarALCarrito);
+
+function button () {
+  Swal.fire({
+    position: 'top-end',
+    icon: 'success',
+    title: 'Your work has been saved',
+    showConfirmButton: false,
+    timer: 1500
+  })
+} 
+
 
 function filtrar(){
-
+  const arrayFiltrado = buscar()
   mostrarProductos(arrayFiltrado);
 }
 
@@ -161,5 +179,6 @@ function buscar() {
   console.log(buscador.value);
   let arrayFiltrado = products.filter(prod => prod.modelo.includes(buscador.value))
   console.log(arrayFiltrado);
+  mostrarProductos (arrayFiltrado);
 }
 
