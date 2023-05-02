@@ -126,7 +126,17 @@ function mostrarProductos(productos){
 
     const btnComprar = document.getElementById(`${p.id}`);
     btnComprar.addEventListener('click', agregarALCarrito);
-  
+
+    function btnComprar(){
+      Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Su producto se agrego al carrito',
+      showConfirmButton: false,
+      timer: 1500
+    })
+    }
+    
                  
   })
 }
@@ -149,19 +159,7 @@ function agregarALCarrito(e){
  
   console.log(carrito) 
 }
-// agregarle una alerta de agregado al carrito al button
-  let agregar = document.getElementById("${p.id}");
-  agregar.addEventListener('click',agregarALCarrito);
 
-function button () {
-  Swal.fire({
-    position: 'top-end',
-    icon: 'success',
-    title: 'Your work has been saved',
-    showConfirmButton: false,
-    timer: 1500
-  })
-} 
 
 
 function filtrar(){
