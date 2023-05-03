@@ -160,23 +160,20 @@ Swal.fire('Su producto se agrego al carrito')
 
 
 
-/*function filtrar(){
-  const arrayFiltrado = buscar()
-  mostrarProductos(arrayFiltrado);
-}*/
-
-//este boton es para que filtre una busqueda por categoria
-let boton = document.getElementById("search-button")
-boton.addEventListener("click", buscar)
-
-
-//con este se filtraria el buscador
+//con este se filtraria el buscador al ingresar un nombre del modelo
 function buscar() {
   let buscador = document.getElementById("search-input");
   console.log(buscador.value);
-  let arrayFiltrado = products.filter(prod => prod.modelo === buscador.value)
+  let arrayFiltrado = products.filter((prod) => prod.modelo.includes(buscador.value));
   console.log(arrayFiltrado);
   mostrarProductos (arrayFiltrado);
 }
 
+//este boton es para que filtre una busqueda por categoria
+function buscarCategoria() {
+  let buscador = document.getElementById("category-select");
+  filter-button.addEventListener("click", Filtrar);
+  let arrayFiltrado = products.filter((prod) => prod.categoria === (buscador.value));
+  mostrarProductos (arrayFiltrado);
 
+}
