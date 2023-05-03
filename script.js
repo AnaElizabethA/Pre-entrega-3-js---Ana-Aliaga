@@ -138,6 +138,7 @@ function mostrarProductos(productos){
 
 mostrarProductos(products)
 
+
 function agregarALCarrito(e){
   e.preventDefault();
 
@@ -159,21 +160,23 @@ Swal.fire('Su producto se agrego al carrito')
 
 
 
-function filtrar(){
+/*function filtrar(){
   const arrayFiltrado = buscar()
   mostrarProductos(arrayFiltrado);
-}
+}*/
 
 //este boton es para que filtre una busqueda por categoria
 let boton = document.getElementById("search-button")
 boton.addEventListener("click", buscar)
 
+
 //con este se filtraria el buscador
 function buscar() {
   let buscador = document.getElementById("search-input");
   console.log(buscador.value);
-  let arrayFiltrado = products.filter(prod => prod.modelo.includes(buscador.value))
+  let arrayFiltrado = products.filter(prod => prod.modelo === buscador.value)
   console.log(arrayFiltrado);
   mostrarProductos (arrayFiltrado);
 }
+
 
