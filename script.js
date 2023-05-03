@@ -1,7 +1,12 @@
 //mensaje de bienvenida
-function bienvenido(){
-Swal.fire("Bienvenido a Arrimos Morales");
-}
+Swal.fire({
+  title: '"Bienvenido a Arrimos Morales"',
+  text: 'aqui podra ver todos nuestros modelos.',
+  imageUrl: './img/logoarrimo.jpg',
+  imageWidth: 500,
+  imageHeight: 250,
+  imageAlt: 'Custom image',
+})
 
 const products = [
   {
@@ -148,13 +153,8 @@ function agregarALCarrito(e){
  
   console.log(carrito) 
 
-  Swal.fire({
-    position: 'top-end',
-    icon: 'success',
-    title: 'Your work has been saved',
-    showConfirmButton: false,
-    timer: 1500
-  })
+   
+Swal.fire('Su producto se agrego al carrito')
 }
 
 
