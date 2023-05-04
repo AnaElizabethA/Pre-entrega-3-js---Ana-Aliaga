@@ -160,7 +160,10 @@ Swal.fire('Su producto se agrego al carrito')
 
 
 
-//con este se filtraria el buscador al ingresar un nombre del modelo
+let boton = document.getElementById("search-button")
+boton.addEventListener("click", buscar)
+
+//con este se filtraria el buscador al ingresar un nombre
 function buscar() {
   let buscador = document.getElementById("search-input");
   console.log(buscador.value);
@@ -169,10 +172,14 @@ function buscar() {
   mostrarProductos (arrayFiltrado);
 }
 
+
+let button = document.getElementById("filter-button");
+button.addEventListener("click", filtrar)
+
 //este boton es para que filtre una busqueda por categoria
-function buscarCategoria() {
+function filtrar() {
   let buscador = document.getElementById("category-select");
-  filter-button.addEventListener("click", Filtrar);
+  console.log (buscador.value)
   let arrayFiltrado = products.filter((prod) => prod.categoria === (buscador.value));
   mostrarProductos (arrayFiltrado);
 
