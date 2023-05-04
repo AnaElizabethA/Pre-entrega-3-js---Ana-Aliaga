@@ -172,7 +172,6 @@ function buscar() {
   mostrarProductos (arrayFiltrado);
 }
 
-
 let button = document.getElementById("filter-button");
 button.addEventListener("click", filtrar)
 
@@ -182,12 +181,57 @@ function filtrar() {
   console.log (buscador.value)
   let arrayFiltrado = products.filter((prod) => prod.categoria === (buscador.value));
   mostrarProductos (arrayFiltrado);
-  let todos = document.getElementsById("todos")
-  console.log(todos.value)
-  if  (buscador === (todos.value) ) {
-    mostrarProductos (); 
-   } else {arrayFiltrado === (buscador.value);
-    mostrarProductos (arrayFiltrado);
+  if ((buscador.value) === prod.categoria); {
+    mostrarProductos(arrayFiltrado);
+  } else { ((buscador.value) === ("category-select")); 
+  mostrarProductos(products);
   }
 
 }
+
+
+/*const arrimos= products.filter((arrimo)=>arrimo.categoria === "arrimos");
+const mesaDeCentro= products.filter ((arrimo)=>arrimo.categoria === "mesa de centro");
+const modulares= products.filter((arrimo)=>arrimo.categoria === "modulares");
+const personalizados = products.filter((arrimo)=>arrimo.categoria ==="personalizados");
+
+let buscador = document.getElementById("category-select");
+switch(buscador){
+  case "arrimos":
+    arrayProductos(arrimos)
+    break;
+    case "mesa de centro":
+      arrayProductos(mesaDeCentro)
+      break;
+        case "modulares":
+          arrayProductos(modulares)
+          break;
+            case "personalizados":
+              arrayProductos(personalizados)
+              break;
+              default:
+                arrayProductos(products)
+                break;
+}
+
+
+console.log (buscador.value);
+
+
+function arrayProductos (array){
+  nuevoDiv.innerHTML=''
+  array.forEach((prod)=>{
+
+    let divContenedor= document.createElement('div')
+    divContenedor.innerHTML=`<h1>${prod.id}</h1>
+      <h2>${prod.modelo}</h2>
+      <h3>${prod.categoria}</h3>
+      <h4>${prod.precio}</h4>
+      <h4>${prod.stock}</h4>
+      <img src-${prod.img}>`
+
+    nuevoDiv.append(divContenedor)
+
+})
+
+}*/
