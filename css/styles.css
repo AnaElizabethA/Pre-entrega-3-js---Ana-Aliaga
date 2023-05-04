@@ -15,13 +15,6 @@ a {
   background-image:url(../img/nav-madera2.jpg);
 }
 
-function buscarCategoria() {
-  let buscador = document.getElementById("filter-button");
-  filter-button.addEventListener("click", Filtrar);
-  let arrayFiltrado = products.filter((prod) => prod.categoria === (buscador.value));
-  mostrarProductos (arrayFiltrado);
-
-}
 .seleccionados {
   text-align: center;
   padding: 1rem;

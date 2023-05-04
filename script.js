@@ -182,5 +182,12 @@ function filtrar() {
   console.log (buscador.value)
   let arrayFiltrado = products.filter((prod) => prod.categoria === (buscador.value));
   mostrarProductos (arrayFiltrado);
+  let todos = document.getElementsById("todos")
+  console.log(todos.value)
+  if  (buscador === (todos.value) ) {
+    mostrarProductos (); 
+   } else {arrayFiltrado === (buscador.value);
+    mostrarProductos (arrayFiltrado);
+  }
 
 }
