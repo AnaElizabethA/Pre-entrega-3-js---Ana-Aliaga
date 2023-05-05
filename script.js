@@ -54,17 +54,19 @@ function agregarALCarrito(e){
   console.log(e.target.id);
 
   const id = parseInt(e.target.id);
-
-  const prod = products.find(p => p.id === id);
-
-  carrito.push(prod);
-
+  fetch(listadoProductos)
+  .then((respuesta)=> respuesta.json())
+  .then((datos) => {
+    const prod = datos.find((p)=> p.id === id);
+   carrito.push(prod);
+  
   localStorage.setItem("carrito", JSON.stringify (carrito));
  
-  console.log(carrito) 
+  console.log(carrito); 
 
    
-Swal.fire('Su producto se agrego al carrito')
+Swal.fire('Su producto se agrego al carrito');
+})
 }
 
 
@@ -76,7 +78,7 @@ boton.addEventListener("click", buscar)
 function buscar() {
   let buscador = document.getElementById("search-input");
   console.log(buscador.value);
-  let arrayFiltrado = listadoProductos.filter((prod) => producto.modelo.includes(buscador.value));
+  let arrayFiltrado = listadoProductos.filter((producto) => producto.modelo.includes(buscador.value));
   console.log(arrayFiltrado);
   mostrarProductos (arrayFiltrado);
 }
@@ -88,7 +90,7 @@ button.addEventListener("click", filtrar)
 function filtrar() {
   let buscador = document.getElementById("category-select");
   console.log (buscador.value)
-  let arrayFiltrado = listadoProductos.filter((prod) => producto.categoria === (buscador.value));
+  let arrayFiltrado = listadoProductos.filter((producto) => producto.categoria === (buscador.value));
   mostrarProductos (arrayFiltrado);
   /*if ((buscador.value) === prod.categoria); {
     mostrarProductos(arrayFiltrado);
