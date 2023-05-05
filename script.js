@@ -27,7 +27,7 @@ const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 
 function mostrarProductos(productos){
-  productos.forEach((productos) => {
+  productos.forEach((producto) => {
     const card = document.createElement('div');
     card.className = 'card';
      card.innerHTML =`<h3>${producto.modelo}</h3>
@@ -40,15 +40,12 @@ function mostrarProductos(productos){
 
     contenedorProductos.appendChild(card);  
 
-    const btnComprar = document.getElementById(`${p.id}`);
+    const btnComprar = document.getElementById(`${producto.id}`);
     btnComprar.addEventListener('click', agregarALCarrito);
     agregarALCarrito(producto.id, productos);
                  
   })
 }
-
-
-mostrarProductos(productos)
 
 
 function agregarALCarrito(e){
@@ -79,7 +76,7 @@ boton.addEventListener("click", buscar)
 function buscar() {
   let buscador = document.getElementById("search-input");
   console.log(buscador.value);
-  let arrayFiltrado = products.filter((prod) => prod.modelo.includes(buscador.value));
+  let arrayFiltrado = listadoProductos.filter((prod) => producto.modelo.includes(buscador.value));
   console.log(arrayFiltrado);
   mostrarProductos (arrayFiltrado);
 }
@@ -91,7 +88,7 @@ button.addEventListener("click", filtrar)
 function filtrar() {
   let buscador = document.getElementById("category-select");
   console.log (buscador.value)
-  let arrayFiltrado = products.filter((prod) => prod.categoria === (buscador.value));
+  let arrayFiltrado = listadoProductos.filter((prod) => producto.categoria === (buscador.value));
   mostrarProductos (arrayFiltrado);
   /*if ((buscador.value) === prod.categoria); {
     mostrarProductos(arrayFiltrado);
