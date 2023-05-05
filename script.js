@@ -42,7 +42,7 @@ function mostrarProductos(productos){
 
     const btnComprar = document.getElementById(`${producto.id}`);
     btnComprar.addEventListener('click', agregarALCarrito);
-    agregarALCarrito(producto.id, productos);
+
                  
   })
 }
@@ -71,6 +71,7 @@ Swal.fire('Su producto se agrego al carrito');
 
 
 
+
 let boton = document.getElementById("search-button")
 boton.addEventListener("click", buscar)
 
@@ -78,9 +79,14 @@ boton.addEventListener("click", buscar)
 function buscar() {
   let buscador = document.getElementById("search-input");
   console.log(buscador.value);
+
+  fetch(listadoProductos)
+   .then((respuesta)=> respuesta.json())
+   .then((listadoProductos) => {
   let arrayFiltrado = listadoProductos.filter((producto) => producto.modelo.includes(buscador.value));
   console.log(arrayFiltrado);
   mostrarProductos (arrayFiltrado);
+})
 }
 
 let button = document.getElementById("filter-button");
@@ -89,7 +95,11 @@ button.addEventListener("click", filtrar)
 //este boton es para que filtre una busqueda por categoria
 function filtrar() {
   let buscador = document.getElementById("category-select");
-  console.log (buscador.value)
+  console.log (buscador.value);
+
+  fetch(listadoProductos)
+  .then((respuesta)=> respuesta.json())
+  .then((listadoProductos) => {
   let arrayFiltrado = listadoProductos.filter((producto) => producto.categoria === (buscador.value));
   mostrarProductos (arrayFiltrado);
   /*if ((buscador.value) === prod.categoria); {
@@ -97,33 +107,10 @@ function filtrar() {
   } else { ((buscador.value) === ("category-select")); 
   mostrarProductos(products);
   }*/
-
+  })
 }
 
 
-/*const arrimos= products.filter((arrimo)=>arrimo.categoria === "arrimos");
-const mesaDeCentro= products.filter ((arrimo)=>arrimo.categoria === "mesa de centro");
-const modulares= products.filter((arrimo)=>arrimo.categoria === "modulares");
-const personalizados = products.filter((arrimo)=>arrimo.categoria ==="personalizados");
-
-let buscador = document.getElementById("category-select");
-switch(buscador){
-  case "arrimos":
-    arrayProductos(arrimos)
-    break;
-    case "mesa de centro":
-      arrayProductos(mesaDeCentro)
-      break;
-        case "modulares":
-          arrayProductos(modulares)
-          break;
-            case "personalizados":
-              arrayProductos(personalizados)
-              break;
-              default:
-                arrayProductos(products)
-                break;
-}
 
 
 console.log (buscador.value);
@@ -145,4 +132,4 @@ function arrayProductos (array){
 
 })
 
-}*/
+}
