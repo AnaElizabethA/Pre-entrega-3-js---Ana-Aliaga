@@ -1,5 +1,5 @@
-const listadoProductos = 'json/productos.json';
-const contenedorProductos = document.getElementById('mostrarProductos')
+const listadoProductos = './productos.json';
+const contenedorProductos = document.getElementById('mostrarProductos');
 
 fetch(listadoProductos)
  .then(respuesta => respuesta.json())
@@ -93,11 +93,11 @@ function filtrar() {
   console.log (buscador.value)
   let arrayFiltrado = products.filter((prod) => prod.categoria === (buscador.value));
   mostrarProductos (arrayFiltrado);
-  if ((buscador.value) === prod.categoria); {
+  /*if ((buscador.value) === prod.categoria); {
     mostrarProductos(arrayFiltrado);
   } else { ((buscador.value) === ("category-select")); 
   mostrarProductos(products);
-  }
+  }*/
 
 }
 
