@@ -27,6 +27,7 @@ const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 
 function mostrarProductos(productos){
+  contenedorProductos.innerHTML = " "
   productos.forEach((producto) => {
     const card = document.createElement('div');
     card.className = 'card';
@@ -109,11 +110,6 @@ function filtrar() {
   }*/
   })
 }
-
-
-
-
-console.log (buscador.value);
 
 
 function arrayProductos (array){

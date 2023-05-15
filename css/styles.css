@@ -23,19 +23,19 @@ a {
 
 }
 
-#container-prods {
-  padding: 2rem;
-  margin: 2rem;
-  border-style: groove;
-  display: flex;
-  flex-wrap: wrap;
+.card img {
+  width: 18rem;
 }
 
 div {
-  margin: 1rem;
-  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+  margin: 2rem;
+  padding: 1rem;
   background-color: rgb(244, 223, 196);
-  border-style: outset;
+  border-style: ridge;
 }
 
 .misEstilos {
