@@ -94,21 +94,23 @@ let button = document.getElementById("filter-button");
 button.addEventListener("click", filtrar)
 
 //este boton es para que filtre una busqueda por categoria
-function filtrar() {
-  let buscador = document.getElementById("category-select");
-  console.log (buscador.value);
 
-  fetch(listadoProductos)
-  .then((respuesta)=> respuesta.json())
-  .then((listadoProductos) => {
-  let arrayFiltrado = listadoProductos.filter((producto) => producto.categoria === (buscador.value));
-  mostrarProductos (arrayFiltrado);
-  /*if ((buscador.value) === prod.categoria); {
-    mostrarProductos(arrayFiltrado);
-  } else { ((buscador.value) === ("category-select")); 
-  mostrarProductos(products);
-  }*/
-  })
+function filtrar() {
+	let buscador = document.getElementById("category-select");
+	console.log(buscador.value);
+
+	fetch(listadoProductos)
+		.then((respuesta) => respuesta.json())
+		.then((listadoProductos) => {
+			let arrayFiltrado;
+			if (buscador.value === "todos") {
+				arrayFiltrado = listadoProductos;
+			} else {
+				arrayFiltrado = listadoProductos.filter((producto) => producto.categoria === buscador.value);
+			}
+			mostrarProductos(arrayFiltrado);
+		
+		});
 }
 
 
